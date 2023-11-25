@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Railway Reservation System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <img class="logo" src="https://imgs.search.brave.com/_VIAcmruZ2gNQiQ8I1zU8xaWhy46g57YmD2Hrr1Tgms/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9yZXMu/Y2xvdWRpbmFyeS5j/b20vemVuYnVzaW5l/c3MvaW1hZ2UvdXBs/b2FkL3YxNjcwNDQ1/MDQwL2xvZ2FzdGVy/L2xvZ2FzdGVyLTIw/MjAtMDgtdC1yYWls/d2F5LWxvZ28tMi5q/cGc" alt="Train Logo">
+        <h1>Railway Reservation System</h1>
+        <form id="reservationForm">
+            <label for="trainSelect">Select a Train:</label>
+            <select id="trainSelect" required>
+                <option value="" disabled selected>Select a train</option>
+                <option value="express">Express Train</option>
+                <option value="local">Local Train</option>
+                <option value="bullet">Mail Train</option>
+            </select>
+            <label for="trainName">Train Name:</label>
+            <input type="text" id="trainName" required>
+
+            <label for="departure">Departure:</label>
+            <input type="text" id="departure" required>
+
+            <label for="destination">Destination:</label>
+            <input type="text" id="destination" required>
+
+            <label for="date">Date:</label>
+            <input type="date" id="date" required>
+
+            <label for="passengerCount">Number of Passengers:</label>
+            <input type="number" name="passengerCount" id="passengerCount" min="1" required onchange="generatePassengerFields()">
+
+            <div id="passengerDetails"></div>
+
+            <label for="class">Class:</label>
+            <select id="class" required>
+                <option value="economy">Economy</option>
+                <option value="business">Business</option>
+                <option value="firstClass">First Class</option>
+            </select>
+            <!-- <label for="specialServices">Special Services:</label>
+            <input type="checkbox" id="specialServices">
+
+            <label for="catering">Catering:</label>
+            <input type="checkbox" id="catering"> -->
+
+            <button type="button" onclick="makeReservation()">Make Reservation</button>
+        </form>
+        <button type="button" onclick="checkBookingStatus()">Check Booking Status</button>
+        <a href="upcoming-journeys.html" target="_blank">Upcoming Journeys</a>
+
+        <div id="reservationResult"></div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="upcoming-journeys.js"></script>
+
+</body>
+</html>
